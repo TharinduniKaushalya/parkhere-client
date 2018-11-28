@@ -1,0 +1,55 @@
+<div *ngIf="user">
+  <h2 class="page-header" style="color:maroon"><b>{{user.name}}</b></h2>
+
+  <!-- https://github.com/charindukavishan/AuditingHelpApp/tree/master/src/app -->
+
+  <br>
+  <br>
+  <br>
+ 
+<!-- 
+    
+    <form ng-submit="Submit()">
+      <label class="btn btn-success">
+        Browse
+      
+      <input type="file"  file-model="file.upload" name="picture" ng-disabled="uploading" style="display:none">
+    </label>
+      <br>
+      <br>
+      <button class="btn btn-primary" ng-disabled="uploading">Upload</button>
+    </form> -->
+
+
+    <br>
+    <img class="mythumbnail" src="{{ 'https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg'}}">
+    <br>
+    <br>
+    <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="button" class="btn btn-success btn-s" 
+  (click)="uploader.uploadAll()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload an Image
+</button>
+<!-- 
+
+    <div ng-show="message">
+      <div class="alert">{{message}}</div>zz
+    </div> -->
+  
+
+
+    
+    <br>
+    <br>
+    <br>
+  <ul class="list-group">
+    <li class="list-group-item" style="color:black"><b>Username:   {{user.username}}</b></li>
+    <li class="list-group-item"  style="color:black"><b>Email:   {{user.email}}</b></li>
+  </ul>
+</div>
+
+
+<button type="button" class="btn btn-primary btn-lg">Add park details</button>
+<button type="button" class="btn btn-primary btn-lg">View park</button>
